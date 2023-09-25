@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiểm tra từ đối xứng</title>
+  </head>
+  <body>
+    <h1>Kiểm tra từ đối xứng</h1>
+    <input type="text" id="inputWord" placeholder="Nhập từ cần kiểm tra" />
+    <button onclick="checkPalindrome()">Kiểm tra</button>
+    <p id="result"></p>
+
+    <script>
+      //   Hàm kiểm tra xem một chuỗi có phải là từ đối xứng hay không
+      function isPalindrome(s) {
+        // Trường hợp cơ bản: nếu chuỗi rỗng hoặc chỉ có một ký tự, nó là từ đối xứng
+        if (s.length === 0 || s.length === 1) {
+          return true;
+        }
+
+        // Kiểm tra xem ký tự đầu và cuối của chuỗi có bằng nhau không
+        if (s[0] !== s[s.length - 1]) {
+          return false;
+        }
+
+        // Kiểm tra đệ quy xem phần còn lại của chuỗi sau khi loại bỏ ký tự đầu và cuối có phải từ đối xứng không
+        return isPalindrome(s.slice(1, s.length - 1));
+      }
+      // Kiểm tra đệ quy xem phần còn lại của chuỗi sau khi loại bỏ ký tự đầu và cuối có phải từ đối xứng không
+
+      // Hàm kiểm tra và hiển thị kết quả
+      function checkPalindrome() {
+        let inputElement = document.getElementById("inputWord");
+        let resultElement = document.getElementById("result");
+        let inputWord = inputElement.value;
+
+        if (isPalindrome(inputWord)) {
+          resultElement.innerHTML = `"${inputWord}" là từ đối xứng.<br/>`;
+        } else {
+          resultElement.innerHTML = `"${inputWord}" không phải từ đối xứng. <br/>`;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Tạo hàm nhận vào hai tham số. Nếu giá trị của tham số thứ nhất lớn hơn
+      tham số thứ hai, yêu cầu người dùng nhập lại giá trị thứ hai. Nếu giá trị
+      của tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai, trả về tổng của
+      hai tham số.
+    </p>
+    <script>
+      function Calculate(firstNumber, secondNumber) {
+        let sum = firstNumber + secondNumber;
+        return sum;
+      }
+
+      let firstNumber = parseFloat(prompt("Nhập số thứ nhất:"));
+      let secondNumber = parseFloat(prompt("Nhập số thứ hai:"));
+
+      while (
+        isNaN(firstNumber) ||
+        isNaN(secondNumber) ||
+        firstNumber > secondNumber
+      ) {
+        if (isNaN(firstNumber) || isNaN(secondNumber)) {
+          alert("Vui lòng nhập số hợp lệ.");
+        } else {
+          alert("Số thứ nhất lớn hơn số thứ hai. Vui lòng nhập lại.");
+        }
+        firstNumber = parseFloat(prompt("Nhập lại số thứ nhất:"));
+        secondNumber = parseFloat(prompt("Nhập lại số thứ hai:"));
+      }
+
+      let result = Calculate(firstNumber, secondNumber);
+      alert("Tổng của 2 số là " + result);
+    </script>
+  </body>
+</html>

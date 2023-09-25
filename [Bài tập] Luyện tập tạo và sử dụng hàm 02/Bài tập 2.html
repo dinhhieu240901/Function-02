@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng
+      được
+    </p>
+    <script>
+      function calculateArea(radius) {
+        if (isNaN(radius) || radius <= 0) {
+          radius = parseFloat(prompt("Nhập lại bán kính:"));
+        }
+        return Math.PI * radius * radius;
+      }
+
+      function calculatePerimeter(radius) {
+        if (isNaN(radius) || radius <= 0) {
+          radius = parseFloat(prompt("Nhập lại bán kính:"));
+        }
+        return 2 * Math.PI * radius;
+      }
+
+      let radius = parseFloat(prompt("Nhập bán kính hình tròn:"));
+
+      while (isNaN(radius) || radius <= 0) {
+        radius = parseFloat(prompt("Vui lòng nhập lại bán kính hình tròn:"));
+      }
+
+      let area = calculateArea(radius);
+      let perimeter = calculatePerimeter(radius);
+
+      document.write("Diện tích hình tròn là: " + area);
+      document.write("Chu vi hình tròn là: " + perimeter);
+    </script>
+  </body>
+</html>

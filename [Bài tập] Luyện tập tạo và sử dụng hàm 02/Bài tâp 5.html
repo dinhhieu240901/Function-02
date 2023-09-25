@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ
+      nhất.
+    </p>
+    <script>
+      function findSmallestInteger(a, b, c) {
+        let smallest = a; 
+
+        if (Number.isInteger(b) && b < smallest) {
+          smallest = b;
+        }
+
+        if (Number.isInteger(c) && c < smallest) {
+          smallest = c;
+        }
+
+        while (!Number.isInteger(smallest)) {
+          smallest = parseInt(prompt("Nhập lại số nguyên:"));
+        }
+
+        return smallest;
+      }
+
+      let num1 = parseInt(prompt("Nhập số thứ nhất:"));
+      let num2 = parseInt(prompt("Nhập số thứ hai:"));
+      let num3 = parseInt(prompt("Nhập số thứ ba:"));
+
+      let smallestNumber = findSmallestInteger(num1, num2, num3); // Lưu kết quả vào biến smallestNumber.
+      document.write("Số nguyên nhỏ nhất là: " + smallestNumber);
+    </script>
+  </body>
+</html>

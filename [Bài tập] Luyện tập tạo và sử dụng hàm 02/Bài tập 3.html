@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa
+      xây dựng được.
+    </p>
+    <script>
+      function calculateFactorial(number) {
+        let factorial = 1;
+        for (let i = 1; i <= number; i++) {
+          factorial *= i;
+        }
+        return factorial;
+      }
+
+      let inputNumber = parseFloat(prompt("Nhập một số nguyên dương: "));
+      while (isNaN(inputNumber) || inputNumber < 0) {
+        inputNumber = parseFloat(
+          prompt("Vui lòng nhập lại một số nguyên dương: ")
+        );
+      }
+      let factorialResult = calculateFactorial(inputNumber);
+      document.write(`Giai thừa của ${inputNumber} là: ` + factorialResult);
+    </script>
+  </body>
+</html>

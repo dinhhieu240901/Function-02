@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên
+      đó.
+    </p>
+    <script>
+      function reverseArray(arr) {
+        return arr.reverse();
+      }
+
+      function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      let maxArrLengthA = parseInt(prompt("Nhập số phần tử tối đa của mảng A"));
+      let minNumA = parseInt(prompt("Nhập giá trị nhỏ nhất của mảng A"));
+      let maxNumA = parseInt(prompt("Nhập giá trị lớn nhất của mảng A"));
+
+      let arrA = [];
+
+      while (arrA.length < maxArrLengthA) {
+        let randNum = getRandomInt(minNumA, maxNumA);
+        arrA.push(randNum);
+      }
+
+      let reversedArray = reverseArray(arrA);
+      document.write("Mảng ban đầu:" + arrA + "<br>");
+      document.write("Mảng sau khi đảo ngược:" + reversedArray);
+    </script>
+  </body>
+</html>

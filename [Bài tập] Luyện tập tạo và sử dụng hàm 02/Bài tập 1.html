@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Viết hàm tính bình phương của một số bất kỳ được đưa vào. Gọi hàm vừa xây
+      dựng được.
+    </p>
+    <script>
+      function square(number) {
+        return number * number;
+      }
+      let number = parseFloat(prompt("Nhập một số bất kỳ: "));
+
+      while (isNaN(number)) {
+        number = parseFloat(prompt("Vui lòng nhập lại một số bất kỳ: "));
+      }
+
+      document.write(`Bình phương của ${number} là ` + square(number));
+    </script>
+  </body>
+</html>

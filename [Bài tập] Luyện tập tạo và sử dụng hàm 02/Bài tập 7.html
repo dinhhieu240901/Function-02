@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onload="swapNumbers()">
+    <p>
+      Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên
+      đó.
+    </p>
+    <script>
+      function swapNumbers(a, b) {
+        let temp = a;
+        a = b;
+        b = temp;
+        return [a, b];
+      }
+
+      // Test the swapNumbers function
+      let num1 = 5;
+      let num2 = 10;
+      alert("Before swapping: num1 = " + num1 + " and num2 = " + num2);
+      swapNumbers(num1, num2);
+      alert("After swapping: num1 = " + num1 + " and num2 = " + num2); // Cập nhật giá trị trong hộp thoại
+    </script>
+  </body>
+</html>

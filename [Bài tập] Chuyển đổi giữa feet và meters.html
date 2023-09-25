@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chuyển đổi giữa feet và meters</title>
+  </head>
+  <body>
+    <h2>Chuyển đổi giữa feet và meters</h2>
+    <input type="text" id="tu" />
+    <select id="tuDonVi">
+      <option value="feet">Feet</option>
+      <option value="meters">Meters</option>
+    </select>
+    <span>đến</span>
+    <select id="denDonVi">
+      <option value="feet">Feet</option>
+      <option value="meters">Meters</option>
+    </select>
+    <input type="button" value="Kiểm tra" onclick="chuyendoi()" />
+    <input type="button" value="Chuyển đổi đơn vị" onclick="chuyenDoiDonVi()" />
+
+    <p id="ketQua"></p>
+
+    <script>
+      isFeet = true;
+      function chuyendoi() {
+        let tuDonVi = document.getElementById("tuDonVi").value;
+        let denDonVi = document.getElementById("denDonVi").value;
+        let giatri = document.getElementById("tu").value;
+        let ketqua;
+
+        if (tuDonVi === "feet" && denDonVi === "meters") {
+          ketqua = changeFeetToMeter(giatri);
+          document.getElementById("ketQua").innerHTML =
+            "Kết quả = " + ketqua + " meters";
+        } else if (tuDonVi === "meters" && denDonVi === "feet") {
+          ketqua = changeMeterToFeet(giatri);
+          document.getElementById("ketQua").innerHTML =
+            "Kết quả = " + ketqua + " feet";
+        } else {
+          document.getElementById("ketQua").innerHTML =
+            "Chọn đơn vị chuyển đổi không hợp lệ";
+        }
+      }
+
+      function changeFeetToMeter(feet) {
+        let meter = 0.305 * feet;
+        return meter;
+      }
+
+      function changeMeterToFeet(meter) {
+        let feet = 3.279 * meter;
+        return feet;
+      }
+
+      function chuyenDoiDonVi() {
+        isFeet = !isFeet;
+        document.getElementById("tuDonVi").value = isFeet ? "feet" : "meters";
+        document.getElementById("denDonVi").value = isFeet ? "meters" : "feet";
+      }
+    </script>
+  </body>
+</html>
